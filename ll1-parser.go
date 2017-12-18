@@ -1,7 +1,9 @@
 package ll1
 
-import s "strings"
-import "fmt"
+import (
+	// "fmt"
+	"strings"
+)
 
 func id(str string) (bool, string) {
 	// fmt.Println("in id str = ", str)
@@ -105,7 +107,6 @@ func TT(str string) (bool, string) {
 		}
 		return TT(r)
 	}
-
 	return true, str
 }
 
@@ -124,7 +125,6 @@ func EE(str string) (bool, string) {
 		return true, str
 	}
 	if str[0] == '+' || str[0] == '-' {
-
 		str = str[1:]
 		a, r := T(str)
 		if !a {
@@ -132,7 +132,6 @@ func EE(str string) (bool, string) {
 		}
 		return EE(r)
 	}
-
 	return true, str
 }
 
@@ -169,7 +168,6 @@ func S(str string) (bool, string) {
 	if len(str) == 0 {
 		return true, str
 	}
-
 	a, r := Z(str)
 	if !a {
 		return false, r
@@ -178,7 +176,7 @@ func S(str string) (bool, string) {
 }
 
 func Parse(str string) bool {
-	str = s.Replace(str, " ", "", -1)
+	str = strings.Replace(str, " ", "", -1)
 
 	a, r := S(str)
 	if len(r) == 0 && a {
