@@ -4,7 +4,7 @@ import s "strings"
 import "fmt"
 
 func id(str string) (bool, string) {
-	fmt.Println("in id str = ", str)
+	// fmt.Println("in id str = ", str)
 	if (str[0] >= 'a' && str[0] <= 'z') || (str[0] >= 'A' && str[0] <= 'Z') {
 		str = str[1:]
 		if len(str) == 0 {
@@ -23,7 +23,7 @@ func id(str string) (bool, string) {
 }
 
 func real(str string) (bool, string) {
-	fmt.Println("in real str = ", str)
+	// fmt.Println("in real str = ", str)
 	for str[0] >= '0' && str[0] <= '9' {
 		str = str[1:]
 		if len(str) == 0 {
@@ -46,7 +46,7 @@ func real(str string) (bool, string) {
 }
 
 func A(str string) (bool, string) {
-	fmt.Println("in A str = ", str)
+	// fmt.Println("in A str = ", str)
 	if len(str) == 0 {
 		return true, str
 	}
@@ -63,10 +63,10 @@ func A(str string) (bool, string) {
 }
 
 func F(str string) (bool, string) {
+	// fmt.Println("in F str = ", str)
 	if len(str) == 0 {
 		return false, str
 	}
-	fmt.Println("in F str = ", str)
 	if (str[0] >= 'a' && str[0] <= 'z') || (str[0] >= 'A' && str[0] <= 'Z') {
 		a, r := id(str)
 		if !a {
@@ -93,7 +93,7 @@ func F(str string) (bool, string) {
 }
 
 func TT(str string) (bool, string) {
-	fmt.Println("in TT str = ", str)
+	// fmt.Println("in TT str = ", str)
 	if len(str) == 0 {
 		return true, str
 	}
@@ -110,7 +110,7 @@ func TT(str string) (bool, string) {
 }
 
 func T(str string) (bool, string) {
-	fmt.Println("in T str = ", str)
+	// fmt.Println("in T str = ", str)
 	a, r := F(str)
 	if !a {
 		return false, r
@@ -119,7 +119,7 @@ func T(str string) (bool, string) {
 }
 
 func EE(str string) (bool, string) {
-	fmt.Println("in EE str = ", str)
+	// fmt.Println("in EE str = ", str)
 	if len(str) == 0 {
 		return true, str
 	}
@@ -137,7 +137,7 @@ func EE(str string) (bool, string) {
 }
 
 func E(str string) (bool, string) {
-	fmt.Println("in E str = ", str)
+	// fmt.Println("in E str = ", str)
 	a, r := T(str)
 	if !a {
 		return false, r
@@ -146,7 +146,7 @@ func E(str string) (bool, string) {
 }
 
 func Z(str string) (bool, string) {
-	fmt.Println("in Z str = ", str)
+	// fmt.Println("in Z str = ", str)
 	a, r := id(str)
 	if !a || len(r) == 0 {
 		return false, r
@@ -165,7 +165,7 @@ func Z(str string) (bool, string) {
 }
 
 func S(str string) (bool, string) {
-	fmt.Println("in S str = ", str)
+	// fmt.Println("in S str = ", str)
 	if len(str) == 0 {
 		return true, str
 	}
